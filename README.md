@@ -108,12 +108,4 @@ Python, discord.py, Vertex AI (fine-tuned Gemini), Groq (Llama), asyncio, httpx
 
 ## Caveats
 
-**The model isn't in here.** Training data was my own group chats, so the endpoint and dataset stay private. To get the persona behavior you'd fine-tune your own model on your own chat export and point `TUNED_MODEL_ENDPOINT` at it. Everything else works against any Vertex generative endpoint, it just won't sound like anybody in particular.
-
-**Safety filters are turned down.** `model.py` sets the Vertex thresholds to `BLOCK_NONE`. The persona is trained on unfiltered group chat and the defaults kept tripping on normal banter between friends. Fine in a private server you control, not fine anywhere else. Turn them back up if you're deploying this somewhere with strangers in it.
-
-**Tell people it's a bot.** Everyone in my server knew. The system prompt also tells it not to claim to be human if someone actually asks. Keep that if you fork this.
-
-**State lives in memory.** History, typing state and cooldowns all reset when the process dies. Only long-term memory and the token log get written to disk as JSON. Fine for one server, first thing I'd fix for anything bigger.
-
-**Groq model names rot.** The ones in `.env.example` may be dead or renamed by now, check [Groq's model list](https://console.groq.com/docs/models).
+**Groq models will deprecate** The ones in `.env.example` may be dead or renamed by now, check [Groq's model list](https://console.groq.com/docs/models).
