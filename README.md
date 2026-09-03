@@ -27,9 +27,9 @@ memory write   every N responses, ask the model what to remember
 
 ## Some choices I made
 
-**History is per channel, not per user.** It's a group chat, so the bot needs to see everything, not just messages aimed at it. Each turn gets prefixed with the speaker's name so the model knows who said what.
+**History is per channel** It's a group chat, so the bot needs to see everything, not just messages aimed at it. Each turn gets prefixed with the speaker's name so the model knows who said what.
 
-**Replies wait on the typing indicator instead of a timer.** People send one thought as three messages. With a fixed delay you either cut them off or feel slow. Watching for the typing indicator to stop means the bot waits however long the person actually takes. Every new message from that user restarts the wait.
+**Replies wait on the typing indicator** People send one thought as three messages. With a fixed delay you either cut them off or feel slow. Watching for the typing indicator to stop means the bot waits however long the person actually takes. Every new message from that user restarts the wait.
 
 **A cheap model handles memory lookup.** Stuffing every saved fact into the prompt gets expensive and buries the actual conversation, so a small fast model reads the incoming message and returns just the IDs of facts that matter. Writing works the other way around: the tuned model decides what from the last few exchanges is worth saving, since it's the one that knows what the persona would care about.
 
