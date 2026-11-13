@@ -1,6 +1,6 @@
 # Charlotte
 
-A Discord bot powered by a fine-tuned LLM trained on my own chat history! This is the controller I used in group chats to make it type the way I actually do, rather than sounding like a generic assistant.
+A Discord bot powered by a fine-tuned LLM trained on my own chat history! This is the controller I used in group chats to make it type the way I actually do
 
 
 ## What happens to a message
